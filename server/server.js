@@ -1,10 +1,21 @@
 const express = require('express');
 const port = process.env.PORT || 3500;
+const cors = require('cors')
+const corsOptions = require('./config/corsOptions')
 const app = express();
 const router = require('./routes/root')
 const path = require('path');
+const {logger} = require('./middlewares/logger');
+const errorHandler = require('./middlewares/errorHandler')
+app.use(cors(corsOptions))
+
+
+
+
+app.use(logger)
 app.use(express.static(path.join(__dirname, 'public')))
 app.use('/', router)
+
 
 
 
@@ -29,6 +40,7 @@ app.all("*path", (req, res) => {
 
 
 
+app.use(errorHandler)
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
