@@ -11,6 +11,7 @@ const {logger} = require('./middlewares/logger');
 const errorHandler = require('./middlewares/errorHandler')
 const userRoutes = require('./routes/userRoutes');
 const connectDB = require('./config/dbConn');
+const cookieParser = require('cookie-parser')
 
 
 
@@ -18,8 +19,10 @@ const connectDB = require('./config/dbConn');
 app.use(cors(corsOptions))
 app.use(logger)
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.json())
+app.use(cookieParser())
 app.use('/', root)
-app.use('/user', userRoutes)
+app.use('/users', userRoutes)
 
 
 

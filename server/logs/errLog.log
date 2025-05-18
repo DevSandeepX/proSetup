@@ -1,2 +1,10 @@
 2025-05-17	11:20:47	9667f996-f53d-4a06-9707-8dac4db3b464	Error	Not allowed by CORS	OPTIONS	https://www.google.com	 /
 2025-05-17	11:20:47	866cab8b-0790-4345-9a19-7d06d7362f7f	Error	Not allowed by CORS	GET	https://www.google.com	 /
+2025-05-18	12:20:28	d0c526a6-b75a-4e33-9038-d11e73e0fde7	TypeError	Cannot destructure property 'username' of 'req.body' as it is undefined.	POST	undefined	 /users
+2025-05-18	12:33:58	28518ea9-4440-4944-8401-fcb21d8e21e8	ReferenceError	mongoose is not defined	PATCH	undefined	 /users
+2025-05-18	12:34:34	82dd3142-c07e-4b8f-b484-429ac7a2c4c4	TypeError	Class constructor ObjectId cannot be invoked without 'new'	PATCH	undefined	 /users
+2025-05-18	12:39:07	2ef083f6-4bcd-4a0a-852d-2536da73ec76	TypeError	Class constructor ObjectId cannot be invoked without 'new'	PATCH	undefined	 /users
+2025-05-18	12:53:49	9ace8c37-2c69-4694-9f6c-2019d235bf74	ReferenceError	user_id is not defined	DELETE	undefined	 /users
+2025-05-18	12:56:11	cf3b3033-9793-4dd0-ad44-de4763b2c15f	CastError	Cast to ObjectId failed for value "68298722cbbc6bb4e9a010e" (type string) at path "_id" for model "User"	DELETE	undefined	 /users
+2025-05-18	12:58:23	9ca68ffa-ffe0-424b-8382-cbd2b3f1dbcf	CastError	Cast to ObjectId failed for value "68298722cbbc6bb4e9a010e" (type string) at path "_id" for model "User"	DELETE	undefined	 /users
+2025-05-18	13:00:37	7f41479d-639d-4089-ab68-c16aa92bf6ed	TypeError	Cannot read properties of null (reading 'length')	DELETE	undefined	 /users
