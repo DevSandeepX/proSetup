@@ -1,20 +1,25 @@
 const express = require('express');
 const port = process.env.PORT || 3500;
+require('dotenv').config()
 const cors = require('cors')
 const corsOptions = require('./config/corsOptions')
+const logEvents = require('./middlewares/logger')
 const app = express();
-const router = require('./routes/root')
+const root = require('./routes/root')
 const path = require('path');
 const {logger} = require('./middlewares/logger');
 const errorHandler = require('./middlewares/errorHandler')
+const userRoutes = require('./routes/userRoutes');
+const connectDB = require('./config/dbConn');
+
+
+
+
 app.use(cors(corsOptions))
-
-
-
-
 app.use(logger)
 app.use(express.static(path.join(__dirname, 'public')))
-app.use('/', router)
+app.use('/', root)
+app.use('/user', userRoutes)
 
 
 
@@ -37,10 +42,12 @@ app.all("*path", (req, res) => {
 });
 
 
-
-
-
 app.use(errorHandler)
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+
+// server.js or index.js
+connectDB().then(() => {
+  app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+  });
 });
+
