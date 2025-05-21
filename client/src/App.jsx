@@ -6,10 +6,10 @@ import Login from './features/auth/Login'
 import DashLayout from './components/DashLayout'
 import Welcome from './features/auth/Welcome'
 import UsersList from './features/users/UsersList'
-import NotesList
+import NotesList from './features/notes/NotesList'
 
-from './features/notes/NotesList'
 const App = () => {
+ 
   return (
     <Routes>
       <Route path='/' element={<Layout/>}>

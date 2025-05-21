@@ -8,3 +8,7 @@
 2025-05-18	12:56:11	cf3b3033-9793-4dd0-ad44-de4763b2c15f	CastError	Cast to ObjectId failed for value "68298722cbbc6bb4e9a010e" (type string) at path "_id" for model "User"	DELETE	undefined	 /users
 2025-05-18	12:58:23	9ca68ffa-ffe0-424b-8382-cbd2b3f1dbcf	CastError	Cast to ObjectId failed for value "68298722cbbc6bb4e9a010e" (type string) at path "_id" for model "User"	DELETE	undefined	 /users
 2025-05-18	13:00:37	7f41479d-639d-4089-ab68-c16aa92bf6ed	TypeError	Cannot read properties of null (reading 'length')	DELETE	undefined	 /users
+2025-05-21	18:11:58	11bf4b03-09ad-4591-91d5-a875bbe2d5a4	Error	Not allowed by CORS	GET	http://localhost:5173	 /users
+2025-05-21	18:13:03	ab9c41ad-afe5-4901-b042-7bb6cfac80fa	Error	Not allowed by CORS	GET	http://localhost:5173	 /users
+2025-05-21	18:13:09	08d645cf-55e1-4a1a-a2af-6cf8aec1e800	Error	Not allowed by CORS	GET	http://localhost:5173	 /users
+2025-05-21	18:14:11	75c50fcd-c8a7-4cfe-bed5-157552b0f12a	Error	Not allowed by CORS	GET	http://localhost:5173	 /users

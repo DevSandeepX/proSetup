@@ -10,7 +10,7 @@ const DashLayout = () => {
       <div>
         <Outlet />
       </div>
-      <DashFooter />
+      {/* <DashFooter /> */}
     </>
   )
 }
