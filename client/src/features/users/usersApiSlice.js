@@ -16,7 +16,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
             transformResponse: responseData => {
                 console.log(responseData)
                 const loadedUsers = responseData.users.map((user) => {
-                    user.id = user._id       
+                    user.id = user._id
                     return user
                 })
 
@@ -34,6 +34,41 @@ export const usersApiSlice = apiSlice.injectEndpoints({
 
 
             }
+
+        }),
+
+        addNewUser: builder.mutation({
+            query: userIntialData => ({
+                url: '/users',
+                method: 'POST',
+                body: { ...userAdapter }
+            }),
+
+            invalidatesTags: [
+                { type: "User", id: 'LIST' }
+            ]
+
+        }),
+
+        updateUser: builder.mutation({
+            query: userIntialData => ({
+                url: '/users',
+                method: 'PATCH',
+                body: { ...userIntialData }
+            }),
+
+            invalidatesTags: (result, err, arg) => [{ type: 'User', id: arg.id }]
+
+        }),
+        deleteUser: builder.mutation({
+            query: ({ id }) => ({
+                url: '/users',
+                method: 'DELETE',
+                body: { id }
+
+            }),
+
+            invalidatesTags: (result, err, arg) => [{ type: 'User', id: arg.id }]
 
         })
     })
@@ -56,4 +91,9 @@ export const {
 
 
 
-export const { useGetUsersQuery } = usersApiSlice
+export const {
+    useGetUsersQuery,
+    useAddNewUserMutation,
+    useUpdateUserMutation,
+    useDeleteUserMutation
+} = usersApiSlice

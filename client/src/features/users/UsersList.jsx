@@ -1,10 +1,10 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { Pencil } from 'lucide-react'
 import {
   useGetUsersQuery,
   selectAllUsers
 } from './usersApiSlice'
+import User from './User'
 
 const UsersList = () => {
   const {
@@ -31,21 +31,7 @@ const UsersList = () => {
       </div>
 
       {users.map(user => (
-        <div
-          key={user.id}
-          className="grid grid-cols-4 items-center py-4 border-b text-sm sm:text-base"
-        >
-          <div>{user.username}</div>
-          <div>{user.roles.join(', ')}</div>
-          <div className={user.active ? 'text-green-600' : 'text-red-500'}>
-            {user.active ? 'Active' : 'Inactive'}
-          </div>
-          <div>
-            <button className="text-indigo-600 hover:text-indigo-800">
-              <Pencil size={20} />
-            </button>
-          </div>
-        </div>
+        <User user={user}/>
       ))}
     </div>
   )
