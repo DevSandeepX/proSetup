@@ -12,7 +12,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
             validateStatus: (response, result) => {
                 return response.status === 200 && !result.isError
             },
-            keepUnusedDataFor: 5,
+          
             transformResponse: responseData => {
                 console.log(responseData)
                 const loadedUsers = responseData.users.map((user) => {
@@ -41,7 +41,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
             query: userIntialData => ({
                 url: '/users',
                 method: 'POST',
-                body: { ...userAdapter }
+                body: { ...userIntialData}
             }),
 
             invalidatesTags: [
@@ -57,7 +57,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
                 body: { ...userIntialData }
             }),
 
-            invalidatesTags: (result, err, arg) => [{ type: 'User', id: arg.id }]
+            invalidatesTags: (result, err, arg) => [{ type: 'User', id: arg.id },{ type: 'User', id: 'LIST' }]
 
         }),
         deleteUser: builder.mutation({

@@ -17,7 +17,9 @@ const DashHeader = () => {
 
       <ul className="text-white md:flex hidden items-center gap-10">
         <li><Link to="/dash/notes" className="hover:text-white/70 transition">View Notes</Link></li>
-        <li><Link to="/dash/users" className="hover:text-white/70 transition">View Users</Link></li>
+        <li><Link to="/dash/notes/new" className="hover:text-white/70 transition">New Notes</Link></li>
+        <li><Link to="/dash/notes" className="hover:text-white/70 transition">View Notes</Link></li>
+        <li><Link to="/dash/users/new" className="hover:text-white/70 transition">New Users</Link></li>
         
       </ul>
 

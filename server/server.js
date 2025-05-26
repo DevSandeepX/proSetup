@@ -10,6 +10,8 @@ const path = require('path');
 const {logger} = require('./middlewares/logger');
 const errorHandler = require('./middlewares/errorHandler')
 const userRoutes = require('./routes/userRoutes');
+const authRoutes = require('./routes/authRoutes');
+const noteRoutes = require('./routes/noteRoutes');
 const connectDB = require('./config/dbConn');
 const cookieParser = require('cookie-parser')
 
@@ -22,7 +24,9 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.json())
 app.use(cookieParser())
 app.use('/', root)
+app.use('/auth', authRoutes)
 app.use('/users', userRoutes)
+app.use('/notes', noteRoutes)
 
 
 

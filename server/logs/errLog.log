@@ -12,3 +12,4 @@
 2025-05-21	18:13:03	ab9c41ad-afe5-4901-b042-7bb6cfac80fa	Error	Not allowed by CORS	GET	http://localhost:5173	 /users
 2025-05-21	18:13:09	08d645cf-55e1-4a1a-a2af-6cf8aec1e800	Error	Not allowed by CORS	GET	http://localhost:5173	 /users
 2025-05-21	18:14:11	75c50fcd-c8a7-4cfe-bed5-157552b0f12a	Error	Not allowed by CORS	GET	http://localhost:5173	 /users
+2025-05-26	09:00:49	3648476f-96d6-422d-ac19-7dfe45241398	TypeError	res.cookies is not a function	POST	undefined	 /auth

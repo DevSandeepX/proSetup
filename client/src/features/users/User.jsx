@@ -14,7 +14,7 @@ const User = ({user}) => {
             {user.active ? 'Active' : 'Inactive'}
           </div>
           <div>
-            <button className="text-indigo-600 hover:text-indigo-800" onClick={()=>navigate('/dash')}>
+            <button className="text-indigo-600 hover:text-indigo-800" onClick={()=>navigate(`/dash/users/${user.id}`)}>
               <Pencil size={20} />
             </button>
           </div>
