@@ -13,3 +13,13 @@
 2025-05-21	18:13:09	08d645cf-55e1-4a1a-a2af-6cf8aec1e800	Error	Not allowed by CORS	GET	http://localhost:5173	 /users
 2025-05-21	18:14:11	75c50fcd-c8a7-4cfe-bed5-157552b0f12a	Error	Not allowed by CORS	GET	http://localhost:5173	 /users
 2025-05-26	09:00:49	3648476f-96d6-422d-ac19-7dfe45241398	TypeError	res.cookies is not a function	POST	undefined	 /auth
+2025-05-26	10:03:09	d6b96c33-ef08-424f-8b73-3f64a548f618	TypeError	res.stattus is not a function	POST	undefined	 /notes
+2025-05-26	10:03:42	eb842afb-257c-4f28-a768-0f8586a07628	TypeError	res.stattus is not a function	POST	undefined	 /notes
+2025-05-26	10:56:57	de381a13-cd38-459c-a1d6-0921ed200052	TypeError	authHeader?.startWith is not a function	POST	undefined	 /notes
+2025-05-26	10:58:55	d88f7877-4461-4736-ade9-8da5e34c8bf5	TypeError	authHeader?.starstWith is not a function	POST	undefined	 /notes
+2025-05-26	11:13:34	d8ffec92-1d81-4cd1-bafa-b604bd0bc2ee	TypeError	Cannot read properties of undefined (reading 'username')	POST	undefined	 /notes
+2025-05-26	11:16:43	610fa720-9e7a-4806-bfc8-a9b404e420e7	TypeError	Cannot read properties of undefined (reading 'username')	POST	undefined	 /notes
+2025-05-26	11:23:52	d8b2b3a7-aeff-4012-af60-23a60544b318	ReferenceError	cookieParser is not defined	GET	undefined	 /auth/refresh
+2025-05-26	11:26:01	d4a8d5ea-15a2-4b53-8235-949d04e8aad3	ReferenceError	cookieParser is not defined	GET	undefined	 /auth/refresh
+2025-05-26	11:27:01	7a95583b-bd88-4848-a1f4-29b074d58027	ReferenceError	cookies is not defined	GET	undefined	 /auth/refresh
+2025-05-26	11:51:53	f174d70d-276b-430a-af8c-a9e2dece1f18	ReferenceError	user is not defined	POST	undefined	 /notes

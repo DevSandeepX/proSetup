@@ -17,7 +17,7 @@ const login = asyncHandler(async (req, res) => {
     if (!match) return res.status(402).json({ message: 'Invalid credentials' })
 
     const accessToken = jwt.sign({
-        " UserInfo": {
+        "UserInfo": {
             "username": foundUser.username,
             "roles": foundUser.roles
         }
@@ -50,12 +50,13 @@ const login = asyncHandler(async (req, res) => {
 })
 
 const refresh = asyncHandler(async (req, res) => {
-    const refereshToken = cookieParser.jwt
-    if (!refereshToken?.jwt) return res.status(401).json({ message: 'Unauthorized' })
+    const cookies = req.cookies
+    if (!cookies?.jwt) return res.status(401).json({ message: 'Unauthorized' })
+        const refereshToken = cookies.jwt
 
     jwt.verify(
         refereshToken,
-        process.env.ACCESS_TOKEN_SECRET,
+        process.env.REFERESH_TOKEN_SECRET,
         async (err, decoded) => {
             if (err) return res.status(401).json({ message: 'Forbidden - Invalid token' })
             const foundUser = await User.findOne({ username: decoded.username })
